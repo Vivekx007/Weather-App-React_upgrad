@@ -1,0 +1,15 @@
+.weather_Container {
+  background-color: #6500f2;
+  width: 100%;
+  /* padding: 0;
+  margin: 0; */
+  padding-top: 10px;
+  padding-left: 10px;
+  height: 60px;
+  border-top: black solid 4px;
+}
+
+.weather_header {
+  color: white;
+  font-size: 30px;
+}
