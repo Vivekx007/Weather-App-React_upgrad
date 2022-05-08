@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
@@ -22,9 +22,6 @@ function App() {
     cityCountry: "",
   });
 
-  const baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
-  const apiKey = "007095548204eb9975bb507a5c3f2cdb";
-
   const onCityChange = (city) => {
     console.log(city);
     setCityDetails((prevState) => {
@@ -35,14 +32,16 @@ function App() {
         cityNameError: false,
       };
     });
-    axios
-      .get(baseUrl + `q=${city}&appid=${apiKey}`)
+    const baseURL = "https://api.openweathermap.org/data/2.5/weather?";
+    const apiKey = "007095548204eb9975bb507a5c3f2cdb";
+    // axios
+    fetch(baseURL + `q=${city}&appid=${apiKey}&units=metric`)
       .then((response) => {
-        console.log(response.data.cod);
-        // return response.json();
+        // console.log(response.data.cod);
+        return response.json();
       })
       .then(function (response) {
-        console.log(response.data.cod);
+        // console.log(response.data.cod);
 
         if (response.cod === "404") {
           setCityDetails((prevState) => {

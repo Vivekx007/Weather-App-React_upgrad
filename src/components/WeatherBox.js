@@ -1,5 +1,5 @@
 import React from "react";
-// import Comments from "./Comments";
+import Comment from "./Comment";
 export default function WeatherBox(props) {
   let dateNow = new Date();
   let weatherIcon =
@@ -68,7 +68,7 @@ export default function WeatherBox(props) {
           marginRight: "15%",
         }}
       >
-        {/* <Comments /> */}
+        <Comment />
       </div>
       <br />
       <br />
